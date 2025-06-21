@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Certified Icon</title>
+    <g id="certificate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Certificate/Award Document -->
+        <rect x="20" y="20" width="80" height="60" rx="3" stroke="#f15a22" stroke-width="3" fill="none"></rect>
+        
+        <!-- Certificate Content Lines -->
+        <line x1="30" y1="30" x2="90" y2="30" stroke="#f15a22" stroke-width="2"></line>
+        <line x1="30" y1="40" x2="70" y2="40" stroke="#f15a22" stroke-width="2"></line>
+        <line x1="30" y1="50" x2="90" y2="50" stroke="#f15a22" stroke-width="2"></line>
+        <line x1="30" y1="60" x2="60" y2="60" stroke="#f15a22" stroke-width="2"></line>
+        
+        <!-- Certificate Seal -->
+        <circle cx="75" cy="65" r="10" stroke="#f15a22" stroke-width="2" fill="none"></circle>
+        
+        <!-- Ribbon -->
+        <path d="M60,80 L50,100 L60,95 L70,100 L60,80" stroke="#f15a22" stroke-width="2" fill="none"></path>
+    </g>
+</svg>

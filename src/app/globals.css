@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Apply Poppins as the default font using CSS variable */
+  html {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-primary: #743f77;
+  --color-primary-light: #9a5d9d;
+  --color-primary-dark: #653767;
+  --color-secondary: #f15a22;
+  --color-secondary-light: #f37a4d;
+  --color-secondary-dark: #d3491b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), system-ui, sans-serif;;
+}
+
+/* Custom utility classes */
+.bg-radial-gradient {
+  background: radial-gradient(circle at center, rgba(241, 90, 34, 0.05) 0%, rgba(116, 63, 119, 0.05) 50%, rgba(255, 255, 255, 0) 70%);
+}

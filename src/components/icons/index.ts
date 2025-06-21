@@ -1,0 +1,10 @@
+export { default as GlobeIcon } from './GlobeIcon';
+export { default as CalendarIcon } from './CalendarIcon';
+export { default as ShieldIcon } from './ShieldIcon';
+export { default as AwardIcon } from './AwardIcon';
+export { default as CertifiedIcon } from './CertifiedIcon';
+export { default as ArchitectureIcon } from './ArchitectureIcon';
+export { default as ImplementationIcon } from './ImplementationIcon';
+export { default as SupportIcon } from './SupportIcon';
+export { default as TrainingIcon } from './TrainingIcon';
+export { default as GrowthIcon } from './GrowthIcon';

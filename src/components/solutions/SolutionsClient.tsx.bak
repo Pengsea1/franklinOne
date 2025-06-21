@@ -1,0 +1,152 @@
+"use client";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const solutions = [
+	{
+		id: 'network-security',
+		title: 'Network Security',
+		description: 'Protect your network infrastructure with advanced security solutions, including next-generation firewalls, intrusion prevention systems, and secure access solutions.',
+		image: 'https://media.istockphoto.com/id/1435605327/photo/cybersecurity-concept-global-network-security-technology-business-people-protect-personal.jpg?s=612x612&w=0&k=20&c=9QvqAsfANdpsNcYdZ0WlMd5lKaTR9BvnTpFnrtGbV0s=',
+		features: [
+			'Next-Generation Firewalls',
+			'Intrusion Prevention Systems',
+			'Secure Access and VPN',
+			'Network Segmentation',
+			'DDoS Protection'
+		]
+	},
+	{
+		id: 'cloud-security',
+		title: 'Cloud Security',
+		description: 'Secure your cloud environments with comprehensive solutions designed for modern cloud architectures, applications, and workloads.',
+		image: 'https://img.freepik.com/free-photo/saas-concept-collage_23-2149399281.jpg',
+		features: [
+			'Cloud Workload Protection',
+			'CASB (Cloud Access Security Broker)',
+			'Cloud Infrastructure Security',
+			'Secure Cloud Connectivity',
+			'Cloud Security Posture Management'
+		]
+	},
+	{
+		id: 'endpoint-security',
+		title: 'Endpoint Protection',
+		description: 'Defend your devices against malware, ransomware, and other threats with next-generation endpoint protection and response solutions.',
+		image: 'https://media.istockphoto.com/id/1367728820/vector/endpoint-security-endpoint-protection-multiple-devices-protected-within-a-network-3d.jpg?s=612x612&w=0&k=20&c=9k3P3UzdLHx33aThbPAFNUeRchTIKiklW05XbBc3uvE=',
+		features: [
+			'Endpoint Detection and Response (EDR)',
+			'Advanced Threat Protection',
+			'Ransomware Prevention',
+			'Device Control',
+			'Application Control'
+		]
+	},
+	{
+		id: 'identity-security',
+		title: 'Identity & Access Management',
+		description: 'Ensure the right people have the right access to the right resources with robust identity and access management solutions.',
+		image: 'https://img.freepik.com/free-photo/eye-futuristic-robot_53876-95096.jpg?semt=ais_hybrid&w=740',
+		features: [
+			'Multi-Factor Authentication',
+			'Single Sign-On (SSO)',
+			'Privileged Access Management',
+			'Identity Governance',
+			'Zero Trust Implementation'
+		]
+	},
+	{
+		id: 'data-security',
+		title: 'Data Security',
+		description: 'Protect your sensitive data wherever it resides with comprehensive data security and privacy solutions.',
+		image: 'https://www.shutterstock.com/image-photo/cybersecurity-concept-user-privacy-security-600nw-2137304159.jpg',
+		features: [
+			'Data Loss Prevention (DLP)',
+			'Data Encryption',
+			'Database Security',
+			'Data Classification',
+			'Privacy Compliance Tools'
+		]
+	},
+	{
+		id: 'security-operations',
+		title: 'Security Operations',
+		description: 'Enhance your security operations with advanced SIEM, SOAR, and managed security services.',
+		image: 'https://media.istockphoto.com/id/2159728298/photo/governmental-cyber-defense-team-using-advanced-technology-to-secure-information.jpg?s=612x612&w=0&k=20&c=U9NrvVRBoGlo2j91OFTBbFvbyDBQitmdilA2ibpLXLE=',
+		features: [
+			'Security Information and Event Management (SIEM)',
+			'Security Orchestration, Automation, and Response (SOAR)',
+			'Threat Intelligence',
+			'Vulnerability Management',
+			'Security Analytics'
+		]
+	}
+];
+
+const SolutionsClient = () => {
+	const containerVariants = {
+		hidden: {},
+		visible: {
+			transition: {
+				staggerChildren: 0.1
+			}
+		}
+	};
+
+	const itemVariants = {
+		hidden: { opacity: 0, y: 20 },
+		visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+	};
+
+	return (
+		<div className="min-h-screen">
+			{/* Hero Section */}
+			<section className="relative py-24 bg-gradient-to-r from-[#743f77] to-[#653767] text-white">
+				<div className="absolute inset-0 bg-[url('/bg-pattern.svg')] opacity-20"></div>
+				<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5 }}
+						className="text-center"
+					>
+						<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Solutions</h1>
+						<div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+						<p className="text-xl max-w-3xl mx-auto text-gray-100">
+							Comprehensive security and networking solutions to protect your organization&apos;s most valuable assets.
+						</p>
+					</motion.div>
+				</div>
+			</section>
+
+			{/* Solutions Section */}
+			<section className="py-20 bg-white">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<motion.div
+						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+						variants={containerVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true }}
+					>
+						{solutions.map((solution) => (
+							<motion.div
+								key={solution.id}
+								className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+								variants={itemVariants}
+							>
+								<div className="relative h-48 bg-gray-200">
+									{solution.image ? (
+										<Image
+											src={solution.image}
+											alt={solution.title}
+											fill
+											style={{ objectFit: 'cover' }}
+										/>
+									) : (
+										<div className="flex items-center justify-center h-full bg-[var(--color-primary)]/10text-[var(--color-primary)]">
+											<svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+											</svg>
+										</div>

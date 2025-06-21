@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="1080px" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>NYC Skyline Sunset</title>
+    <defs>
+        <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#4a5786" />
+            <stop offset="15%" stop-color="#6a789c" />
+            <stop offset="35%" stop-color="#f78ca0" />
+            <stop offset="55%" stop-color="#fdb777" />
+            <stop offset="75%" stop-color="#f9a86c" />
+            <stop offset="100%" stop-color="#ff8c42" />
+        </linearGradient>
+        <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="black" stop-opacity="0.85" />
+            <stop offset="100%" stop-color="#222" stop-opacity="0.85" />
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Sunset Sky -->
+        <rect fill="url(#sunsetGradient)" x="0" y="0" width="1920" height="1080"></rect>
+        
+        <!-- Subtle Clouds -->
+        <path d="M0,250 Q480,220 960,250 Q1440,280 1920,250 L1920,350 Q1440,380 960,350 Q480,320 0,350 Z" fill="white" opacity="0.2"></path>
+        <path d="M0,100 Q480,70 960,100 Q1440,130 1920,100 L1920,170 Q1440,200 960,170 Q480,140 0,170 Z" fill="white" opacity="0.15"></path>
+        
+        <!-- NYC Skyline Silhouette -->
+        <path d="M0,450 
+            L60,450 L60,440 L80,440 L80,420 L100,420 L100,400 L120,400 L120,420 L140,420 L140,440 L160,440 L160,450
+            L180,450 L180,430 L200,430 L200,380 L220,380 L220,430 L240,430 L240,450
+            L260,450 L260,440 L280,440 L280,420 L300,420 L300,410 L320,410 L320,400 L340,400 L340,410 L360,410 L360,420 L380,420 L380,440 L400,440 L400,450
+            L420,450 L420,435 L440,435 L440,400 L460,400 L460,435 L480,435 L480,450
+            L520,450 L520,440 L550,440 L550,430 L580,430 L580,400 L610,400 L610,390 L640,390 L640,400 L670,400 L670,430 L700,430 L700,440 L730,440 L730,450
+            
+            <!-- Empire State Building -->
+            L760,450 L760,430 L790,430 L790,400 L810,400 L810,350 L820,350 L820,280 L830,280 L830,200 L840,200 L840,180 L850,180 L850,200 L860,200 L860,280 L870,280 L870,350 L880,350 L880,400 L900,400 L900,430 L930,430 L930,450
+            
+            L960,450 L960,440 L980,440 L980,410 L1000,410 L1000,400 L1020,400 L1020,410 L1040,410 L1040,440 L1060,440 L1060,450
+            L1080,450 L1080,430 L1100,430 L1100,390 L1120,390 L1120,430 L1140,430 L1140,450
+            L1160,450 L1160,440 L1180,440 L1180,420 L1200,420 L1200,390 L1220,390 L1220,380 L1240,380 L1240,390 L1260,390 L1260,420 L1280,420 L1280,440 L1300,440 L1300,450
+            L1330,450 L1330,430 L1360,430 L1360,390 L1390,390 L1390,430 L1420,430 L1420,450
+            L1450,450 L1450,440 L1470,440 L1470,410 L1490,410 L1490,380 L1510,380 L1510,370 L1530,370 L1530,380 L1550,380 L1550,410 L1570,410 L1570,440 L1590,440 L1590,450
+            L1620,450 L1620,435 L1650,435 L1650,400 L1680,400 L1680,435 L1710,435 L1710,450
+            L1740,450 L1740,440 L1770,440 L1770,400 L1800,400 L1800,370 L1830,370 L1830,400 L1860,400 L1860,440 L1890,440 L1890,450
+            L1920,450
+            
+            L1920,1080 L0,1080 Z" fill="url(#buildingGradient)"></path>
+
+        <!-- Building windows (lights) -->
+        <g fill="#FFCC66" opacity="0.7">
+            <!-- Random building lights -->
+            <circle cx="810" cy="380" r="1"></circle>
+            <circle cx="820" cy="320" r="1"></circle>
+            <circle cx="830" cy="260" r="1"></circle>
+            <circle cx="840" cy="220" r="1"></circle>
+            <circle cx="850" cy="220" r="1"></circle>
+            <circle cx="860" cy="260" r="1"></circle>
+            <circle cx="870" cy="320" r="1"></circle>
+            <circle cx="880" cy="380" r="1"></circle>
+            
+            <circle cx="200" cy="400" r="1"></circle>
+            <circle cx="220" cy="400" r="1"></circle>
+            
+            <circle cx="300" cy="415" r="1"></circle>
+            <circle cx="340" cy="405" r="1"></circle>
+            
+            <circle cx="440" cy="415" r="1"></circle>
+            <circle cx="460" cy="415" r="1"></circle>
+            
+            <circle cx="580" cy="410" r="1"></circle>
+            <circle cx="610" cy="395" r="1"></circle>
+            <circle cx="640" cy="395" r="1"></circle>
+            <circle cx="670" cy="410" r="1"></circle>
+            
+            <circle cx="1000" cy="405" r="1"></circle>
+            <circle cx="1020" cy="405" r="1"></circle>
+            
+            <circle cx="1100" cy="410" r="1"></circle>
+            <circle cx="1120" cy="410" r="1"></circle>
+            
+            <circle cx="1200" cy="400" r="1"></circle>
+            <circle cx="1220" cy="385" r="1"></circle>
+            <circle cx="1240" cy="385" r="1"></circle>
+            <circle cx="1260" cy="400" r="1"></circle>
+            
+            <circle cx="1360" cy="410" r="1"></circle>
+            <circle cx="1390" cy="410" r="1"></circle>
+            
+            <circle cx="1490" cy="390" r="1"></circle>
+            <circle cx="1510" cy="375" r="1"></circle>
+            <circle cx="1530" cy="375" r="1"></circle>
+            <circle cx="1550" cy="390" r="1"></circle>
+            
+            <circle cx="1650" cy="415" r="1"></circle>
+            <circle cx="1680" cy="415" r="1"></circle>
+            
+            <circle cx="1770" cy="420" r="1"></circle>
+            <circle cx="1800" cy="385" r="1"></circle>
+            <circle cx="1830" cy="385" r="1"></circle>
+            <circle cx="1860" cy="420" r="1"></circle>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Growth Icon</title>
+    <g id="growth" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- World/Globe -->
+        <circle cx="60" cy="60" r="40" stroke="#f15a22" stroke-width="3" fill="none"></circle>
+        
+        <!-- Latitude Lines -->
+        <path d="M20,60 L100,60" stroke="#f15a22" stroke-width="2"></path>
+        <path d="M30,40 L90,40" stroke="#f15a22" stroke-width="2"></path>
+        <path d="M30,80 L90,80" stroke="#f15a22" stroke-width="2"></path>
+        
+        <!-- Longitude Lines -->
+        <path d="M60,20 L60,100" stroke="#f15a22" stroke-width="2"></path>
+        <path d="M40,30 L40,90" stroke="#f15a22" stroke-width="2"></path>
+        <path d="M80,30 L80,90" stroke="#f15a22" stroke-width="2"></path>
+        
+        <!-- Growth Arrow -->
+        <path d="M40,70 L60,50 L80,70" stroke="#f15a22" stroke-width="3" fill="none"></path>
+        <path d="M60,50 L60,30" stroke="#f15a22" stroke-width="3" fill="none"></path>
+        <path d="M52,38 L60,30 L68,38" stroke="#f15a22" stroke-width="3" fill="none"></path>
+        
+        <!-- Connection Points -->
+        <circle cx="40" cy="70" r="3" fill="#f15a22"></circle>
+        <circle cx="60" cy="50" r="3" fill="#f15a22"></circle>
+        <circle cx="80" cy="70" r="3" fill="#f15a22"></circle>
+    </g>
+</svg>

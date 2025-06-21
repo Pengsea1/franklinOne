@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="1080px" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>City Silhouette</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#2b3241" x="0" y="0" width="1920" height="1080"></rect>
+        <!-- Sky gradient -->
+        <defs>
+            <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#1a2030" />
+                <stop offset="60%" stop-color="#f15a22" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="#743f77" stop-opacity="0.3" />
+            </linearGradient>
+        </defs>
+        <rect fill="url(#skyGradient)" x="0" y="0" width="1920" height="1080"></rect>
+        
+        <!-- City silhouette -->
+        <path d="M0,680 L60,680 L80,650 L100,680 L120,650 L140,680 L160,650 L180,680 L200,670 L220,680 L240,650 L260,680 L280,650 L300,680 L320,660 L340,680 L360,650 L380,680 L390,670 L400,680 L420,640 L430,680 L450,650 L470,680 L490,650 L510,680 L530,650 L550,680 L580,640 L600,680 L620,650 L640,680 L680,650 L700,680 L720,650 L740,680 L760,650 L780,680 L800,640 L820,680 L840,650 L860,680 L880,650 L900,680 L920,660 L940,680 L960,650 L980,680 L1000,650 L1020,680 L1040,650 L1060,680 L1080,660 L1100,680 L1120,650 L1140,680 L1160,650 L1180,680 L1200,650 L1220,680 L1240,650 L1260,680 L1280,630 L1290,600 L1300,630 L1320,680 L1340,650 L1360,680 L1380,650 L1400,680 L1420,650 L1440,680 L1460,660 L1480,680 L1500,650 L1520,680 L1540,650 L1560,680 L1580,640 L1590,680 L1600,650 L1620,680 L1640,650 L1660,680 L1680,650 L1700,680 L1720,650 L1740,680 L1760,660 L1780,680 L1800,650 L1820,680 L1840,650 L1860,680 L1880,640 L1900,680 L1920,680 L1920,1080 L0,1080 Z" fill="#000000" opacity="0.8"></path>
+        
+        <!-- Empire State Building -->
+        <path d="M960,350 L970,350 L970,450 L975,450 L975,470 L965,470 L965,650 L960,650 L960,350 Z" fill="#000000" opacity="0.9"></path>
+        
+        <!-- Other tall buildings -->
+        <path d="M860,450 L885,450 L885,680 L860,680 L860,450 Z" fill="#000000" opacity="0.85"></path>
+        <path d="M1060,470 L1080,470 L1080,680 L1060,680 L1060,470 Z" fill="#000000" opacity="0.85"></path>
+        <path d="M780,500 L800,500 L800,680 L780,680 L780,500 Z" fill="#000000" opacity="0.85"></path>
+        <path d="M1140,510 L1160,510 L1160,680 L1140,680 L1140,510 Z" fill="#000000" opacity="0.85"></path>
+        
+        <!-- Building lights (scattered dots) -->
+        <circle cx="865" cy="500" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="880" cy="520" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="870" cy="550" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="875" cy="580" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="865" cy="610" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="880" cy="640" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        
+        <circle cx="1065" cy="500" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1075" cy="530" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1070" cy="560" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1065" cy="590" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1075" cy="620" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1070" cy="650" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        
+        <circle cx="785" cy="530" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="795" cy="560" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="785" cy="590" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="795" cy="620" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="785" cy="650" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        
+        <circle cx="1145" cy="530" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1155" cy="560" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1150" cy="590" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1145" cy="620" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="1155" cy="650" r="1.5" fill="#FFCC66" opacity="0.8"></circle>
+        
+        <!-- Empire State Building lights -->
+        <circle cx="965" cy="380" r="1" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="965" cy="410" r="1" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="965" cy="440" r="1" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="965" cy="490" r="1" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="965" cy="520" r="1" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="965" cy="550" r="1" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="965" cy="580" r="1" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="965" cy="610" r="1" fill="#FFCC66" opacity="0.8"></circle>
+        <circle cx="965" cy="640" r="1" fill="#FFCC66" opacity="0.8"></circle>
+    </g>
+</svg>

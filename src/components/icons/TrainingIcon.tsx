@@ -1,0 +1,52 @@
+"use client";
+
+interface TrainingIconProps {
+  className?: string;
+  width?: number;
+  height?: number;
+  color?: string;
+}
+
+const TrainingIcon = ({ 
+  className = "", 
+  width = 120, 
+  height = 120, 
+  color = "var(--color-primary)" 
+}: TrainingIconProps) => {
+  return (
+    <svg 
+      width={width} 
+      height={height} 
+      viewBox="0 0 120 120" 
+      version="1.1" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <title>Training Icon</title>
+      <g id="training" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        {/* Book/Certificate */}
+        <path d="M25,30 L25,90 L60,80 L95,90 L95,30 L60,20 Z" stroke={color} strokeWidth="3" fill="none"></path>
+        
+        {/* Book Pages */}
+        <path d="M60,20 L60,80" stroke={color} strokeWidth="3"></path>
+        
+        {/* Page Lines */}
+        <line x1="35" y1="35" x2="55" y2="35" stroke={color} strokeWidth="2"></line>
+        <line x1="35" y1="45" x2="55" y2="45" stroke={color} strokeWidth="2"></line>
+        <line x1="35" y1="55" x2="55" y2="55" stroke={color} strokeWidth="2"></line>
+        <line x1="35" y1="65" x2="55" y2="65" stroke={color} strokeWidth="2"></line>
+        
+        {/* Certificate Elements */}
+        <rect x="65" y="35" width="20" height="10" rx="2" stroke={color} strokeWidth="2" fill="none"></rect>
+        
+        {/* Graduation Cap */}
+        <circle cx="85" cy="60" r="8" stroke={color} strokeWidth="2" fill="none"></circle>
+        <path d="M77,60 L70,65 L85,75 L100,65 L93,60" stroke={color} strokeWidth="2"></path>
+        <path d="M85,75 L85,82" stroke={color} strokeWidth="2"></path>
+        <path d="M80,83 L90,83" stroke={color} strokeWidth="2"></path>
+      </g>
+    </svg>
+  );
+};
+
+export default TrainingIcon;
