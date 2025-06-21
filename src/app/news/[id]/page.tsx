@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const runtime = 'edge';
+
 export default function DisabledNewsPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-50 via-white to-white px-4">
