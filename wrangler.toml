@@ -1,9 +1,4 @@
 name = "franklinone"
 compatibility_date = "2024-06-24"
-compatibility_flags = ["nodejs_compat"]
-
-[env.production]
-compatibility_flags = ["nodejs_compat"]
-
-[env.preview]
+pages_build_output_dir = ".vercel/output/static"
 compatibility_flags = ["nodejs_compat"] 
