@@ -5,20 +5,88 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const vendors = [
+	// IT, Network, and Security Vendors
 	{
-		name: 'Cisco',
-		logo: 'https://newsroom.cisco.com/c/dam/r/newsroom/en/us/assets/a/y2023/m10/cisco_logo_blue_1200x675.jpg',
-		description: 'Cisco Systems is a global leader in networking, security, and collaboration solutions. We partner with Cisco to provide comprehensive security and networking solutions for organizations of all sizes.',
-		solutions: ['Network Security', 'Secure Access', 'Cloud Security', 'Zero Trust'],
-		website: 'https://www.cisco.com'
+		name: 'SentinelOne',
+		logo: '/images/sentinelone.png', // You can replace with actual logo path
+		description: 'SentinelOne is a leader in AI-powered cybersecurity, providing autonomous endpoint protection, detection, and response through their Singularity platform. Their advanced threat detection and automated response capabilities help organizations defend against ransomware, malware, and sophisticated cyber attacks.',
+		solutions: ['Endpoint Security', 'XDR Platform', 'AI-Powered Threat Detection', 'Automated Response'],
+		website: 'https://www.sentinelone.com',
+		category: 'IT, Network, and Security'
 	},
 	{
-		name: 'Palo Alto Networks',
-		logo: 'https://www.paloaltonetworks.in/etc/clientlibs/pan-templates/seoimages/social-panw.png',
-		description: 'Palo Alto Networks is a leading provider of next-generation security solutions that leverage advanced threat intelligence and cloud-native architecture to protect organizations across the globe.',
-		solutions: ['Next-Gen Firewalls', 'Cloud Security', 'SOAR', 'Zero Trust'],
-		website: 'https://www.paloaltonetworks.com'
+		name: 'Netskope',
+		logo: '/images/netskope logo.png', // You can replace with actual logo path
+		description: 'Netskope is a SASE leader delivering secure access service edge solutions. Their cloud-native platform provides comprehensive security for users, applications, and data across cloud, web, and private applications, enabling secure digital transformation.',
+		solutions: ['SASE', 'Zero Trust Network Access', 'Cloud Security', 'Secure Web Gateway'],
+		website: 'https://www.netskope.com',
+		category: 'IT, Network, and Security'
 	},
+	{
+		name: 'Qualys',
+		logo: '/images/qualy.png', // You can replace with actual logo path
+		description: 'Qualys is a leading provider of cloud-based IT, security, and compliance solutions. Their Enterprise TruRisk Platform helps organizations measure, manage, and reduce cyber risk through vulnerability management, asset discovery, and automated remediation.',
+		solutions: ['Vulnerability Management', 'Asset Discovery', 'Compliance Management', 'Cloud Security'],
+		website: 'https://www.qualys.com',
+		category: 'IT, Network, and Security'
+	},
+	{
+		name: 'Varonis',
+		logo: '/images/varonis.jpg', // You can replace with actual logo path
+		description: 'Varonis is the #1 Data Security Platform that automatically finds critical data, remediates exposure, and stops threats in the cloud and on-premises. Their platform provides comprehensive data discovery, classification, and protection capabilities.',
+		solutions: ['Data Security', 'Data Discovery & Classification', 'Insider Threat Detection', 'Data Access Governance'],
+		website: 'https://www.varonis.com',
+		category: 'IT, Network, and Security'
+	},
+	{
+		name: 'Proofpoint',
+		logo: '/images/proofpoint.jpg', // You can replace with actual logo path
+		description: 'Proofpoint is a leading cybersecurity and compliance company that protects organizations\' greatest assets and biggest risks: their people. Their integrated suite of cloud-based solutions helps companies stop targeted threats and safeguard their data.',
+		solutions: ['Email Security', 'Data Loss Prevention', 'Threat Protection', 'Security Awareness Training'],
+		website: 'https://www.proofpoint.com',
+		category: 'IT, Network, and Security'
+	},
+	{
+		name: 'Ivanti',
+		logo: '/images/ivanti.png', // You can replace with actual logo path
+		description: 'Ivanti provides unified IT service management, security, and endpoint management solutions. Their platform helps organizations discover, manage, secure, and service all their IT assets from a single console, improving efficiency and reducing security risks.',
+		solutions: ['IT Service Management', 'Endpoint Management', 'Security Management', 'Asset Discovery'],
+		website: 'https://www.ivanti.com',
+		category: 'IT, Network, and Security'
+	},
+	{
+		name: 'Blancco',
+		logo: '/images/blancco.png', // You can replace with actual logo path
+		description: 'Blancco is the industry standard for secure data erasure and mobile device diagnostics. Their solutions ensure complete data sanitization and device lifecycle management, helping organizations maintain data privacy and comply with regulations.',
+		solutions: ['Data Erasure', 'Mobile Diagnostics', 'Device Lifecycle Management', 'Compliance Reporting'],
+		website: 'https://www.blancco.com',
+		category: 'IT, Network, and Security'
+	},
+	// Physical Security Vendors
+	{
+		name: 'Milestone Systems',
+		logo: '/images/mil.png', // You can replace with actual logo path
+		description: 'Milestone Systems is a leading provider of open platform IP video management software. Their XProtect platform enables organizations to manage and view video surveillance systems, access control, and other security technologies from a unified interface.',
+		solutions: ['Video Management Software', 'IP Surveillance', 'Access Control Integration', 'Analytics Platform'],
+		website: 'https://www.milestonesys.com',
+		category: 'Physical Security'
+	},
+	{
+		name: 'Gallagher',
+		logo: '/images/gall.jpg', // You can replace with actual logo path
+		description: 'Gallagher Security is a global leader in perimeter protection, access control, and alarm monitoring solutions. Their integrated security management systems provide comprehensive physical security for critical infrastructure and high-security facilities.',
+		solutions: ['Perimeter Security', 'Access Control', 'Intrusion Detection', 'Command & Control'],
+		website: 'https://www.gallaghersecurity.com',
+		category: 'Physical Security'
+	},
+	{
+		name: 'Vaxtor',
+		logo: '/vendor-logos/vaxtor-logo.svg', // You can replace with actual logo path
+		description: 'Vaxtor specializes in advanced automatic number plate recognition (ANPR) and video analytics solutions. Their AI-powered systems provide intelligent video surveillance capabilities for traffic monitoring, parking management, and security applications.',
+		solutions: ['ANPR Technology', 'Video Analytics', 'Traffic Monitoring', 'Intelligent Surveillance'],
+		website: 'https://www.vaxtor.com',
+		category: 'Physical Security'
+	}
 ];
 
 const VendorsClient = () => {
@@ -578,94 +646,86 @@ const VendorsClient = () => {
 						</p>
 					</motion.div>
 
-					<motion.div 
-						className="grid grid-cols-1 md:grid-cols-2 gap-8"
-						variants={containerVariants}
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true }}
-					>
-						{vendors.map((vendor) => (
+					{/* Group vendors by category */}
+					{Object.entries(
+						vendors.reduce((acc, vendor) => {
+							if (!acc[vendor.category]) {
+								acc[vendor.category] = [];
+							}
+							acc[vendor.category].push(vendor);
+							return acc;
+						}, {} as Record<string, typeof vendors>)
+					).map(([category, categoryVendors]) => (
+						<motion.div
+							key={category}
+							className="mb-16"
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.6 }}
+						>
+							{/* Category header */}
+							<div className="mb-8">
+								<h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center">
+									<span className="bg-gradient-to-r from-white via-[var(--color-primary)] to-white bg-clip-text text-transparent">
+										{category}
+									</span>
+								</h3>
+								<div className="w-16 h-1 bg-[var(--color-primary)] mb-4"></div>
+							</div>
+
+							{/* Vendors grid for this category */}
 							<motion.div 
-								key={vendor.name}
-								className="group bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 transition-all duration-500 shadow-xl hover:shadow-2xl flex flex-col relative"
-								variants={itemVariants}
-								whileHover={{ 
-									scale: 1.02,
-									transition: { duration: 0.3 }
-								}}
+								className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+								variants={containerVariants}
+								initial="hidden"
+								whileInView="visible"
+								viewport={{ once: true }}
 							>
-								{/* Corner accents */}
-								<div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-[var(--color-primary)] opacity-40"></div>
-								<div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-[var(--color-primary)] opacity-40"></div>
-								
-								{/* Vendor logo section */}
-								<div className="p-8 bg-gradient-to-br from-gray-700/30 to-gray-800/50 flex items-center justify-center h-48 relative">
-									{/* Security badge */}
-									<div className="absolute top-4 right-4 bg-[var(--color-primary)]/20 rounded-full p-2">
-										<svg className="w-4 h-4 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 20 20">
-											<path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-										</svg>
-									</div>
-									
-									{vendor.logo ? (
-										<Image
-											src={vendor.logo}
-											alt={vendor.name}
-											width={200}
-											height={80}
-											style={{ objectFit: 'contain' }}
-											className="filter brightness-100 group-hover:brightness-110 transition-all duration-300"
-										/>
-									) : (
-										<div className="text-2xl font-bold text-white/80">{vendor.name}</div>
-									)}
-								</div>
-								
-								<div className="p-6 flex-grow relative">
-									<h3 className="text-xl font-bold text-white mb-3 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-										{vendor.name}
-									</h3>
-									<p className="text-gray-300 mb-6 leading-relaxed">{vendor.description}</p>
-									
-									<h4 className="text-md font-semibold text-[var(--color-primary)] mb-4 flex items-center">
-										<svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-										</svg>
-										Key Solutions:
-									</h4>
-									<div className="grid grid-cols-1 gap-2 mb-6">
-										{vendor.solutions.map((solution, index) => (
-											<div key={index} className="text-gray-300 flex items-center bg-gray-800/30 rounded-lg p-3 border border-gray-700/50 hover:border-[var(--color-primary)]/30 transition-colors duration-300">
-												<div className="w-2 h-2 bg-[#f15a22] rounded-full mr-3 flex-shrink-0"></div>
-												<span className="font-medium">{solution}</span>
-											</div>
-										))}
-									</div>
-								</div>
-								
-								<div className="p-6 border-t border-gray-700/50 bg-gradient-to-r from-gray-800/30 to-gray-900/50">
-									<a 
-										href={vendor.website}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="group/link text-[var(--color-primary)] hover:text-white font-medium inline-flex items-center transition-all duration-300 hover:bg-[var(--color-primary)]/10 rounded-lg px-4 py-2 -mx-2"
+								{categoryVendors.map((vendor) => (
+									<motion.div 
+										key={vendor.name}
+										className="group bg-gradient-to-br from-gray-800/50 via-gray-900/80 to-black/90 backdrop-blur-sm rounded-xl overflow-hidden border border-[var(--color-primary)]/20 hover:border-[var(--color-primary)]/40 transition-all duration-500 shadow-xl hover:shadow-2xl flex flex-col relative aspect-square"
+										variants={itemVariants}
+										whileHover={{ 
+											scale: 1.05,
+											transition: { duration: 0.3 }
+										}}
 									>
-										<svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-										</svg>
-										Visit Vendor Website
-										<svg className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-											<path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-										</svg>
-									</a>
-								</div>
-								
-								{/* Hover glow effect */}
-								<div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)]/5 to-[#f15a22]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+										{/* Corner accents */}
+										<div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-[var(--color-primary)] opacity-40"></div>
+										<div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-[var(--color-primary)] opacity-40"></div>
+										
+										{/* Vendor logo section */}
+										<div className="p-4 bg-gradient-to-br from-gray-700/30 to-gray-800/50 flex items-center justify-center flex-grow relative">
+											{vendor.logo ? (
+												<Image
+													src={vendor.logo}
+													alt={vendor.name}
+													width={120}
+													height={60}
+													style={{ objectFit: 'contain' }}
+													className="filter brightness-100 group-hover:brightness-110 transition-all duration-300 max-w-full max-h-full"
+												/>
+											) : (
+												<div className="text-lg font-bold text-white/80 text-center">{vendor.name}</div>
+											)}
+										</div>
+										
+										{/* Vendor name */}
+										<div className="p-3 text-center bg-gradient-to-r from-gray-800/30 to-gray-900/50">
+											<h3 className="text-sm font-semibold text-white group-hover:text-[var(--color-primary)] transition-colors duration-300 line-clamp-2">
+												{vendor.name}
+											</h3>
+										</div>
+										
+										{/* Hover glow effect */}
+										<div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)]/5 to-[#f15a22]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
+									</motion.div>
+								))}
 							</motion.div>
-						))}
-					</motion.div>
+						</motion.div>
+					))}
 				</div>
 			</section>
 
@@ -722,7 +782,7 @@ const VendorsClient = () => {
 					</div>
 				)}
 
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+				<div style={{ display: 'none' }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 					<div className="text-center mb-16">
 						<motion.h2 
 							className="text-3xl md:text-4xl font-bold text-white mb-4"

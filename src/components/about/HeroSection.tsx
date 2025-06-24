@@ -24,76 +24,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white overflow-hidden">
-      {/* Enhanced background patterns */}
-      <div className="absolute inset-0 opacity-15">
-        <div 
-          className="absolute inset-0 bg-repeat"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(116, 63, 119, 0.6) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(116, 63, 119, 0.6) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px'
-          }}
-        />
-      </div>
-
-      {/* Advanced floating security elements */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-[var(--color-primary)] opacity-20"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              rotate: [0, 360],
-              scale: [1, 1.4, 1],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 12 + Math.random() * 8,
-              repeat: Infinity,
-              delay: Math.random() * 6,
-            }}
-          >
-            {i % 6 === 0 && <div className="w-10 h-10 border-2 border-current rounded-full" />}
-            {i % 6 === 1 && <div className="w-8 h-8 border-2 border-current transform rotate-45" />}
-            {i % 6 === 2 && <div className="w-6 h-10 border-2 border-current rounded-sm" />}
-            {i % 6 === 3 && <div className="w-10 h-3 bg-current rounded-full" />}
-            {i % 6 === 4 && <div className="w-6 h-6 border border-current rounded-full flex items-center justify-center"><div className="w-2 h-2 bg-current rounded-full"></div></div>}
-            {i % 6 === 5 && <div className="w-8 h-8 border-2 border-current"><div className="w-4 h-4 bg-current transform rotate-45"></div></div>}
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Enhanced particles */}
-      <div className="absolute inset-0">
-        {[...Array(25)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-[var(--color-primary)] rounded-full opacity-40"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              scale: [1, 2, 1],
-              opacity: [0.2, 0.8, 0.2],
-              y: [0, -50, 0],
-            }}
-            transition={{
-              duration: 8 + Math.random() * 6,
-              repeat: Infinity,
-              delay: Math.random() * 4,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
           {/* Content Side */}
@@ -152,10 +82,10 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-xl md:text-2xl text-white-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 <span className="text-[var(--color-primary)] font-semibold">Truly partner-centric</span> cybersecurity distribution since 2000
               </p>
-              <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg text-white-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Discover our journey from a visionary startup to regional cybersecurity leadership, our mission to protect digital futures, and the expert team driving innovation in the ever-evolving threat landscape.
               </p>
             </motion.div>
@@ -231,25 +161,6 @@ const HeroSection = () => {
                 <div className="absolute top-0 right-0 w-20 h-20 border-r-4 border-t-4 border-[var(--color-primary)] opacity-60 rounded-tr-2xl"></div>
                 <div className="absolute bottom-0 left-0 w-20 h-20 border-l-4 border-b-4 border-[var(--color-primary)] opacity-60 rounded-bl-2xl"></div>
                 <div className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-[var(--color-primary)] opacity-60 rounded-br-2xl"></div>
-
-                {/* Animated background rings */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    className="w-96 h-96 border border-[var(--color-primary)]/20 rounded-full"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                  />
-                  <motion.div
-                    className="absolute w-80 h-80 border border-[var(--color-primary)]/15 rounded-full"
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  />
-                  <motion.div
-                    className="absolute w-64 h-64 border border-[var(--color-primary)]/10 rounded-full"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  />
-                </div>
 
                 {/* Custom Cybersecurity Animation */}
                 <div className="relative z-10 flex items-center justify-center h-[500px]">
